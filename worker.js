@@ -11,7 +11,7 @@ var oauth = new OAuth(
 );
 
 var request = oauth.get(
-  'https://stream.twitter.com/1/statuses/filter.json?follow=16052553',
+  'https://stream.twitter.com/1/statuses/filter.json?follow=' + process.env.FOLLOW_ID,
   process.env.ACCESS_TOKEN,
   process.env.ACCESS_TOKEN_SECRET
 );
