@@ -1,17 +1,21 @@
+var EEW_JP_ID = "16052553"
+var CONSUMER_KEY = "aEJ7PdUhQLadneyFxxqoQw";
+var CONSUMER_SECRET = "KMqw4IsYQaQHB53eTpKqEVrTeMO3ueyFCxMYr7A9suA";
+
 var OAuth = require('oauth').OAuth;
 
 var oauth = new OAuth(
   'https://api.twitter.com/oauth/request_token',
   'https://api.twitter.com/oauth/access_token',
-  process.env.CONSUMER_KEY,
-  process.env.CONSUMER_SECRET,
+  CONSUMER_KEY,
+  CONSUMER_SECRET,
   '1.0a',
   null,
   'HMAC-SHA1'
 );
 
 var request = oauth.get(
-  'https://stream.twitter.com/1/statuses/filter.json?follow=' + process.env.FOLLOW_ID,
+  'https://stream.twitter.com/1/statuses/filter.json?follow=' + EEW_JP_ID,
   process.env.ACCESS_TOKEN,
   process.env.ACCESS_TOKEN_SECRET
 );
